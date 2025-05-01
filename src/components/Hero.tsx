@@ -138,7 +138,7 @@ const Hero: React.FC = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-center justify-between">
           <div className="lg:w-1/2 mb-8 lg:mb-0">
-            <p className="text-blue-600 dark:text-blue-400 font-medium mb-2">Hi, I'm</p>
+{/*             <p className="text-blue-600 dark:text-blue-400 font-medium mb-2">Hi, I'm</p> */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-gray-900 dark:text-gray-100">
               Satyam Pandey
             </h1>
