@@ -11,7 +11,7 @@ import Footer from './components/Footer';
 function App() {
   useEffect(() => {
     // Update document title
-    document.title = 'Satyam Pandey - Full Stack Developer';
+    document.title = 'DevXPanda';
     
     // Implement smooth scrolling for anchor links
     const handleLinkClick = (e: MouseEvent) => {
