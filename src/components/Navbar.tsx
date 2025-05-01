@@ -54,7 +54,7 @@ const Navbar: React.FC = () => {
         <div className="flex justify-between items-center">
           <a 
             href="#home" 
-            className="text-lg sm:text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent whitespace-nowrap"
+             className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent"
             style={{ minWidth: 0, overflow: 'hidden', textOverflow: 'ellipsis' }}
           >
             DevXPanda
