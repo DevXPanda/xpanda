@@ -43,10 +43,11 @@ export const projects: Project[] = [
   {
     id: 3,
     title: 'Ginni Cafe',
-    description: 'A modern restaurant management system with online ordering capabilities, inventory tracking, and customer loyalty program features. This project is currently under development.',
+    description: 'A modern restaurant management system with online ordering capabilities, inventory tracking, and customer loyalty program features.',
     image: 'https://images.pexels.com/photos/6267/menu-restaurant-vintage-table.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     tags: ['React', 'Supabase', 'Tailwind CSS', 'Stripe', 'Vite.js'],
-    link: ''
+    github: 'https://github.com/DevXPanda/Food-Shop',
+    link: 'https://ginniscafe.netlify.app'
   },
 ];
 
