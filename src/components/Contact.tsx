@@ -74,7 +74,7 @@ const Contact: React.FC = () => {
                   })}
                 </div>
                 <p className="text-gray-600 dark:text-gray-400 text-sm mt-auto">
-                  Feel free to connect with me on social media or send me an email. I'm always open to new opportunities, collaborations, or just a friendly chat.
+                  Feel free to connect with me on social media. I'm always open to new opportunities, collaborations, or just a friendly chat.
                 </p>
               </div>
             </div>
