@@ -184,7 +184,7 @@ const Navbar: React.FC = () => {
           <nav className="navbar">
             <div className="flex items-center text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
               <img src={pandaLogo} alt="Panda Logo" style={{ width: '32px', height: '32px', borderRadius: '50%' }} />
-              <span className="navbar-brand ml-2">DevXPanda</span>
+              <span className="navbar-brand ml-2">XPanda</span>
             </div>
           </nav>
 
