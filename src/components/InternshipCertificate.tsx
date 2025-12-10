@@ -18,7 +18,7 @@ const InternshipCertificate: React.FC = () => {
         
         {/* Heading */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-extrabold tracking-tight bg-gradient-to-r from-blue-600 to-cyan-400 text-transparent bg-clip-text mb-4">
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
             Internship Certificate
           </h2>
           <div className="w-24 h-1 rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 mx-auto mb-6"></div>
