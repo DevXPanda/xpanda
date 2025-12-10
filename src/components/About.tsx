@@ -17,14 +17,15 @@ const About: React.FC = () => {
           <div className="order-2 md:order-1">
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Who am I?</h3>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              I'm Satyam Pandey, a Full Stack Developer with a passion for blockchain technologies and Web3. 
-              With a strong foundation in both frontend and backend development, I specialize in building 
-              robust, scalable applications that leverage the power of decentralized technologies.
+             I’m Satyam Pandey, a Full Stack and AI Engineer with experience building scalable web applications and end-to-end AI solutions. 
+             I work with React, Node.js, Express, and PostgreSQL, 
+             and I’ve built projects that range from decentralized file storage systems to AI-powered chatbots and multi-agent assistants.
             </p>
             <p className="text-gray-600 dark:text-gray-400 mb-6">
-              My journey in tech began with traditional web development, but I quickly became fascinated 
-              with the potential of blockchain to revolutionize how we build and interact with applications. 
-              This led me to dive deep into Solidity, Web3.js, and other blockchain technologies.
+              I have a strong foundation in machine learning, deep learning, NLP, and LLM workflows. 
+              I enjoy working with models, vector databases, embeddings, and RAG pipelines, and I’ve deployed production-ready AI features on both frontend and backend systems.
+              Along with AI, I’ve worked on secure, full-stack platforms using modern tools like Supabase, Convex, IPFS, and cloud deployment workflows. 
+              I like solving complex problems, writing clean and reliable code, and building products that offer real value to users.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
