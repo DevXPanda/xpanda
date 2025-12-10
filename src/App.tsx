@@ -7,7 +7,7 @@ import Skills from './components/Skills';
 import Resume from './components/Resume';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import InternshipCertificate form './components/InternshipCertificate';
+import InternshipCertificate from './components/InternshipCertificate';
 
 function App() {
   useEffect(() => {
