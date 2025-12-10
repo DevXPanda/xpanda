@@ -146,11 +146,11 @@ const Hero: React.FC = () => {
               Full Stack Developer
               <span className="text-blue-600 dark:text-blue-400"> | </span>
               <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
-                Blockchain & Web3
+                Artificial Inteligence | Machine Learning 
               </span>
             </h2>
             <p className="text-gray-600 dark:text-gray-400 text-lg mb-8 max-w-lg">
-              A Full Stack Developer passionate about Blockchain and Web3, with experience in building decentralized applications and scalable systems.
+              Where full-stack development meets intelligent automation.
             </p>
             
             <div className="flex flex-wrap gap-4">
