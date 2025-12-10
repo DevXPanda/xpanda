@@ -53,13 +53,13 @@ const InternshipCertificate: React.FC = () => {
               </p>
 
               {/* Certificate Image From Google Drive */}
-              <div className="rounded-xl overflow-hidden shadow-lg border border-gray-300/30 dark:border-gray-600/40">
+              {/* <div className="rounded-xl overflow-hidden shadow-lg border border-gray-300/30 dark:border-gray-600/40">
                 <img 
                   src={certificateURL}
                   alt="Bluestock Internship Certificate" 
                   className="w-full object-cover"
                 />
-              </div>
+              </div> */}
 
               {/* Button */}
               <div className="text-center mt-6">
