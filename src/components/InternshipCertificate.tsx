@@ -42,13 +42,13 @@ const InternshipCertificate: React.FC = () => {
           </p>
 
           {/* Certificate Preview */}
-          {/* <div className="rounded-xl overflow-hidden shadow-md border border-gray-200 dark:border-gray-700 mb-6">
+          <div className="rounded-xl overflow-hidden shadow-md border border-gray-200 dark:border-gray-700 mb-6">
             <img
               src={certificateImage}
               alt="Internship Certificate"
               className="w-full"
             />
-          </div>  */}
+          </div>
 
           {/* View Button */}
           <div className="text-center">
