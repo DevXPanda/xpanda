@@ -41,14 +41,14 @@ const InternshipCertificate: React.FC = () => {
             from <b>1 June 2025</b> to <b>30 July 2025</b> at Bluestock Fintech.
           </p>
 
-          {/* Certificate Preview */}
+          /* {/* Certificate Preview */}
           <div className="rounded-xl overflow-hidden shadow-md border border-gray-200 dark:border-gray-700 mb-6">
             <img
               src={certificateImage}
               alt="Internship Certificate"
               className="w-full"
             />
-          </div>
+          </div> */
 
           {/* View Button */}
           <div className="text-center">
