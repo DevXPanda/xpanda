@@ -2,12 +2,9 @@ import React from "react";
 import { Award, ExternalLink } from "lucide-react";
 
 const InternshipCertificate: React.FC = () => {
-  
-  // 👉 Add your Google Drive direct link here:
-  const certificateURL = "https://drive.google.com/file/d/1BYQWWKGx_8IgFZ_51Io1qbhiyu1xftzx/view?usp=sharing";
-
-  // 👉 Link to open certificate (normal drive link)
-  const certificateLink = "https://drive.google.com/file/d/1BYQWWKGx_8IgFZ_51Io1qbhiyu1xftzx/view?usp=sharing";
+  const certificateID = "https://drive.google.com/file/d/1BYQWWKGx_8IgFZ_51Io1qbhiyu1xftzx/view?usp=sharing"; // Replace this only
+  const certificateImage = `https://drive.google.com/file/d/1BYQWWKGx_8IgFZ_51Io1qbhiyu1xftzx/view?usp=sharing`;
+  const certificateView = `https://drive.google.com/file/d/1BYQWWKGx_8IgFZ_51Io1qbhiyu1xftzx/view?usp=sharing`;
 
   return (
     <section id="internship_certificate" className="py-20">
@@ -69,4 +66,5 @@ const InternshipCertificate: React.FC = () => {
     </section>
   );
 };
+
 export default InternshipCertificate;
