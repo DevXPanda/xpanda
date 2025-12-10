@@ -142,7 +142,7 @@ const navLinks: NavLink[] = [
   { name: 'Skills', href: '#skills' },
   { name: 'Resume', href: '#resume' },
   { name: 'Contact', href: '#contact' },
-  { name: 'InternshipCertificate', href: '#internshipcertificate' },
+  { name: 'Internship Certificate', href: '#internshipcertificate' },
 ];
 
 const Navbar: React.FC = () => {
