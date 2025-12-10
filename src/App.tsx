@@ -7,7 +7,7 @@ import Skills from './components/Skills';
 import Resume from './components/Resume';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import internship form './components/Internship';
+import InternshipCertificate form './components/InternshipCertificate';
 
 function App() {
   useEffect(() => {
@@ -40,7 +40,7 @@ function App() {
       <main>
         <Hero />
         <About />
-        <Internship />
+        <InternshipCertificate />
         <Projects />
         <Skills />
         <Resume />
