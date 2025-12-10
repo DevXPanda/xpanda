@@ -4,10 +4,10 @@ import { Award, ExternalLink } from "lucide-react";
 const InternshipCertificate: React.FC = () => {
   
   // 👉 Add your Google Drive direct link here:
-  const certificateURL = "https://drive.google.com/uc?export=view&id=YOUR_FILE_ID";
+  const certificateURL = "https://drive.google.com/file/d/1BYQWWKGx_8IgFZ_51Io1qbhiyu1xftzx/view?usp=drive_link";
 
   // 👉 Link to open certificate (normal drive link)
-  const certificateLink = "https://drive.google.com/file/d/YOUR_FILE_ID/view";
+  const certificateLink = "https://drive.google.com/file/d/1BYQWWKGx_8IgFZ_51Io1qbhiyu1xftzx/view?usp=drive_link";
 
   return (
     <section
