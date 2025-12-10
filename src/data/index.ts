@@ -134,7 +134,7 @@ export const projects: Project[] = [
     link: 'https://ginniscafe.netlify.app'
   },
   {
-    id: 3,
+    id: 4,
     title: 'PandaAI',
     description:
       'A multi-agent AI assistant capable of handling tasks like answering queries, generating content, automating workflows, and managing user interactions.',
