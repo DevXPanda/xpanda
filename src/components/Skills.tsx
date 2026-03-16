@@ -93,44 +93,27 @@ const Skills: React.FC = () => {
           </div>
         </div>
 
-        {/* Arsenal Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-4 md:gap-6">
-          {filteredSkills.map((skill, index) => {
+        {/* Arsenal Grid - badge style */}
+        <div className="flex flex-wrap justify-center gap-3 md:gap-4">
+          {filteredSkills.map((skill) => {
             const Icon = skill.icon;
-            const config = categoryConfig[skill.category as Exclude<SkillCategory, 'all'>];
+            const config = (categoryConfig as any)[skill.category];
 
             return (
               <div
                 key={skill.id}
-                className="group relative"
-                style={{ animationDelay: `${index * 50}ms` }}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-2xl bg-white/70 dark:bg-white/5 border border-gray-200 dark:border-white/10 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
               >
-                <div className={`relative h-full glass p-6 md:p-8 rounded-[2rem] border-black/5 dark:border-white/5 group-hover:border-${config.color.split('-')[1]}-500/50 transition-all duration-500 flex flex-col items-center justify-center text-center overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2`}>
-                  
-                  {/* Digital Unit ID */}
-                  <div className="absolute top-4 left-6 text-[8px] font-black text-gray-300 dark:text-gray-700 uppercase tracking-tighter opacity-50 group-hover:opacity-100 transition-opacity">
-                    UNT-{index.toString().padStart(2, '0')}
-                  </div>
-
-                  {/* Periodic Scan Effect */}
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 dark:via-white/5 to-transparent h-[200%] -translate-y-full group-hover:animate-scan pointer-events-none"></div>
-
-                  <div className={`w-16 h-16 flex items-center justify-center rounded-2xl mb-6 transition-all duration-700 ${config.bg} ${config.color} group-hover:scale-110 shadow-inner overflow-hidden relative`}>
-                    <div className="absolute inset-x-0 bottom-0 h-0.5 bg-current opacity-20 group-hover:h-full transition-all duration-700"></div>
-                    <Icon size={32} className="relative z-10 transition-transform duration-700 group-hover:rotate-[360deg]" />
-                  </div>
-
-                  <h4 className="text-xs font-black text-gray-900 dark:text-white tracking-[0.2em] uppercase mb-1">
-                    {skill.name}
-                  </h4>
-                  <p className={`text-[8px] font-bold uppercase tracking-widest ${config.color} opacity-40 group-hover:opacity-100 transition-opacity`}>
+                <span className={`flex h-8 w-8 items-center justify-center rounded-xl icon-float-slow ${config.bg} ${config.color}`}>
+                  <Icon size={16} />
+                </span>
+                <div className="flex flex-col">
+                  <span className="text-[10px] uppercase tracking-[0.18em] text-gray-400">
                     {config.label}
-                  </p>
-
-                  {/* Corner Accents */}
-                  <div className={`absolute top-0 right-0 w-8 h-8 opacity-0 group-hover:opacity-100 transition-all duration-500 overflow-hidden`}>
-                     <div className={`absolute top-2 right-2 w-4 h-4 border-t-2 border-r-2 ${config.border} rounded-tr-lg`}></div>
-                  </div>
+                  </span>
+                  <span className="text-xs md:text-sm font-semibold text-gray-900 dark:text-white">
+                    {skill.name}
+                  </span>
                 </div>
               </div>
             );
