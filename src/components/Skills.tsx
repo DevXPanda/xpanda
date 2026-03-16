@@ -8,7 +8,7 @@ type SkillCategory =
   | 'blockchain' 
   | 'devops' 
   | 'database'
-  | 'aiml'; // added AI/ML category
+  | 'aiml';
 
 const categoryLabels: Record<Exclude<SkillCategory, 'all'>, string> = {
   frontend: 'Frontend',
@@ -16,7 +16,7 @@ const categoryLabels: Record<Exclude<SkillCategory, 'all'>, string> = {
   blockchain: 'Blockchain',
   devops: 'DevOps',
   database: 'Database',
-  aiml: 'AI / ML', // new label
+  aiml: 'AI / ML / DL',
 };
 
 const Skills: React.FC = () => {
@@ -27,26 +27,24 @@ const Skills: React.FC = () => {
     : skills.filter(skill => skill.category === activeCategory);
 
   return (
-    <section id="skills" className="py-20 bg-gray-50 dark:bg-gray-900/50">
+    <section id="skills" className="py-24 relative">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Heading */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">My Skills</h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-cyan-500 mx-auto mb-8"></div>
-          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">
-            Here are the technologies and tools I work with to build amazing applications.
-          </p>
+          <h2 className="text-base font-bold text-blue-400 uppercase tracking-[0.3em] mb-4">Stack</h2>
+          <h3 className="text-4xl md:text-5xl font-bold tracking-tight">
+            Technical <span className="text-gradient">Arsenal</span>
+          </h3>
         </div>
 
         {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
+        <div className="flex flex-wrap justify-center gap-2 mb-16">
           <button
             onClick={() => setActiveCategory('all')}
-            className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+            className={`px-6 py-2 rounded-2xl text-sm font-bold transition-all ${
               activeCategory === 'all'
-                ? 'bg-blue-600 text-white'
-                : 'bg-gray-200 text-gray-700 dark:bg-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600'
+                ? 'bg-white text-black scale-105 shadow-lg shadow-blue-500/10'
+                : 'glass text-gray-400 hover:text-white hover:bg-white/5'
             }`}
           >
             All
@@ -56,10 +54,10 @@ const Skills: React.FC = () => {
             <button
               key={category}
               onClick={() => setActiveCategory(category as SkillCategory)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+              className={`px-6 py-2 rounded-2xl text-sm font-bold transition-all ${
                 activeCategory === category
-                  ? 'bg-blue-600 text-white'
-                  : 'bg-gray-200 text-gray-700 dark:bg-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600'
+                  ? 'bg-white text-black scale-105 shadow-lg shadow-blue-500/10'
+                  : 'glass text-gray-400 hover:text-white hover:bg-white/5'
               }`}
             >
               {label}
@@ -68,28 +66,24 @@ const Skills: React.FC = () => {
         </div>
 
         {/* Skills Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
           {filteredSkills.map((skill) => {
             const Icon = skill.icon;
             return (
               <div
                 key={skill.id}
-                className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center transform hover:-translate-y-1"
+                className="glass-card group flex flex-col items-center justify-center text-center hover:-translate-y-2 !p-8 border-white/5"
               >
-                <div className="w-16 h-16 flex items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-400 mb-4">
-                  <Icon size={28} />
+                <div className="w-14 h-14 flex items-center justify-center rounded-2xl bg-blue-500/5 text-blue-400 group-hover:text-white group-hover:bg-blue-500 group-hover:shadow-lg group-hover:shadow-blue-500/20 transition-all duration-500 mb-4">
+                  <Icon size={24} />
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white text-center">
+                <h4 className="text-sm font-bold text-white tracking-wide uppercase">
                   {skill.name}
-                </h3>
-                <span className="text-xs font-medium text-gray-500 dark:text-gray-400 mt-1">
-                  {categoryLabels[skill.category as Exclude<SkillCategory, 'all'>]}
-                </span>
+                </h4>
               </div>
             );
           })}
         </div>
-
       </div>
     </section>
   );

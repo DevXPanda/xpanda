@@ -1,77 +1,93 @@
 import React from 'react';
-import { BookOpen, Briefcase, Award } from 'lucide-react';
+import { BookOpen, Award, Terminal, Code2, Sparkles } from 'lucide-react';
 
 const About: React.FC = () => {
   return (
-    <section id="about" className="py-20 bg-gray-50 dark:bg-gray-900/50">
+    <section id="about" className="py-24 relative overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">About Me</h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-cyan-500 mx-auto mb-8"></div>
-          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">
-            Get to know more about my journey, experiences, and what drives me as a developer.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          <div className="order-2 md:order-1">
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Who am I?</h3>
-            <p className="text-gray-600 dark:text-gray-400 mb-4">
-             I’m Satyam Pandey, a Full Stack and AI Engineer with experience building scalable web applications and end-to-end AI solutions. 
-             I work with React, Node.js, Express, and PostgreSQL, 
-             and I’ve built projects that range from decentralized file storage systems to AI-powered chatbots and multi-agent assistants.
-            </p>
-            <p className="text-gray-600 dark:text-gray-400 mb-6">
-              I have a strong foundation in machine learning, deep learning, NLP, and LLM workflows. 
-              I enjoy working with models, vector databases, embeddings, and RAG pipelines, and I’ve deployed production-ready AI features on both frontend and backend systems.
-              Along with AI, I’ve worked on secure, full-stack platforms using modern tools like Supabase, Convex, IPFS, and cloud deployment workflows. 
-              I like solving complex problems, writing clean and reliable code, and building products that offer real value to users.
-            </p>
-
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-              <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md">
-                <div className="flex items-center mb-2">
-                  <BookOpen className="text-blue-600 dark:text-blue-400 mr-2" size={20} />
-                  <h4 className="font-semibold text-gray-900 dark:text-white">Education</h4>
-                </div>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">B.Tech in Computer Science</p>
+        <div className="flex flex-col lg:flex-row items-center gap-16">
+          <div className="lg:w-1/2">
+            <div className="relative group">
+              <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+              <div className="relative glass-card overflow-hidden">
+                <img 
+                  src="https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                  alt="Coding workspace"
+                  className="rounded-xl w-full h-auto object-cover grayscale hover:grayscale-0 transition-all duration-500 scale-105 group-hover:scale-100"
+                />
               </div>
               
-              {/* <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md">
-                <div className="flex items-center mb-2">
-                  <Briefcase className="text-blue-600 dark:text-blue-400 mr-2" size={20} />
-                  <h4 className="font-semibold text-gray-900 dark:text-white">Experience</h4>
+              <div className="absolute -bottom-6 -right-6 glass p-6 rounded-2xl hidden md:block animate-bounce shadow-2xl border-white/10">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center text-blue-400">
+                    <Terminal size={24} />
+                  </div>
+                  <div>
+                    <p className="text-xs text-gray-400 font-medium uppercase tracking-widest">Experience</p>
+                    <p className="text-lg font-bold">Full Stack AI</p>
+                  </div>
                 </div>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">5+ Years in Development</p>
-              </div> */}
-              
-              <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md">
-                <div className="flex items-center mb-2">
-                  <Award className="text-blue-600 dark:text-blue-400 mr-2" size={20} />
-                  <h4 className="font-semibold text-gray-900 dark:text-white">Projects</h4>
-                </div>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">15+ Completed Projects</p>
               </div>
             </div>
-
-            <a 
-              href="#projects" 
-              className="inline-flex items-center font-medium text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors"
-            >
-              Check out my work
-              <svg className="ml-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"></path>
-              </svg>
-            </a>
           </div>
-          
-          <div className="order-1 md:order-2 flex justify-center">
-            <div className="rounded-lg bg-white dark:bg-gray-800 shadow-xl p-2 w-full max-w-md transform rotate-3 transition-transform hover:rotate-0">
-              <img 
-                src="https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
-                alt="Coding workspace"
-                className="rounded w-full h-auto"
-              />
+
+          <div className="lg:w-1/2">
+            <h2 className="text-base font-bold text-blue-400 uppercase tracking-[0.3em] mb-4">Discovery</h2>
+            <h3 className="text-4xl md:text-5xl font-bold mb-8 tracking-tight">
+              Passionate about <span className="text-gradient">Intelligent Systems</span>
+            </h3>
+            
+            <div className="space-y-6 text-gray-400 text-lg font-light leading-relaxed mb-10">
+              <p>
+                I’m <span className="text-white font-medium">Satyam Pandey</span>, a Full Stack & AI Engineer with hands-on experience building scalable web applications and AI-powered systems. 
+                I specialize in developing production-ready applications, REST APIs, and intelligent automation workflows.
+              </p>
+              <p>
+                I have a strong foundation in <span className="text-white font-medium">Machine Learning, Deep Learning, and NLP</span>. 
+                My expertise lies in integrating LLMs, vector databases, and RAG pipelines into modern web architectures.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="glass-card flex items-start gap-4">
+                <div className="w-10 h-10 bg-blue-500/10 rounded-lg flex items-center justify-center text-blue-400 shrink-0">
+                  <BookOpen size={20} />
+                </div>
+                <div>
+                  <h4 className="font-bold text-white mb-1">Education</h4>
+                  <p className="text-sm text-gray-400">B.Tech in Computer Science</p>
+                </div>
+              </div>
+
+              <div className="glass-card flex items-start gap-4">
+                <div className="w-10 h-10 bg-teal-500/10 rounded-lg flex items-center justify-center text-teal-400 shrink-0">
+                  <Award size={20} />
+                </div>
+                <div>
+                  <h4 className="font-bold text-white mb-1">Impact</h4>
+                  <p className="text-sm text-gray-400">15+ AI & Web Projects</p>
+                </div>
+              </div>
+              
+              <div className="glass-card flex items-start gap-4">
+                <div className="w-10 h-10 bg-purple-500/10 rounded-lg flex items-center justify-center text-purple-400 shrink-0">
+                  <Code2 size={20} />
+                </div>
+                <div>
+                  <h4 className="font-bold text-white mb-1">Coding</h4>
+                  <p className="text-sm text-gray-400">250+ LeetCode Solved</p>
+                </div>
+              </div>
+
+              <div className="glass-card flex items-start gap-4 border-blue-500/30 bg-blue-500/5">
+                <div className="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center text-blue-300 shrink-0">
+                  <Sparkles size={20} />
+                </div>
+                <div>
+                  <h4 className="font-bold text-blue-300 mb-1">Specialty</h4>
+                  <p className="text-sm text-blue-300/70">Agentic Workflows</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

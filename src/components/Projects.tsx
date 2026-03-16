@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ExternalLink, Github, Tag } from 'lucide-react';
+import { ExternalLink, Github, ArrowUpRight, Code } from 'lucide-react';
 import { projects } from '../data';
 import { Project as ProjectType } from '../types';
 
@@ -7,85 +7,86 @@ const Projects: React.FC = () => {
   const [activeProject, setActiveProject] = useState<ProjectType | null>(null);
 
   return (
-    <section id="projects" className="py-20">
+    <section id="projects" className="py-24 bg-gray-950">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">My Projects</h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-cyan-500 mx-auto mb-8"></div>
-          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">
-            Here are some of the projects I've worked on that showcase my skills and expertise.
+        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
+          <div className="max-w-xl">
+            <h2 className="text-base font-bold text-blue-400 uppercase tracking-[0.3em] mb-4 text-center md:text-left">Portfolio</h2>
+            <h3 className="text-4xl md:text-5xl font-bold tracking-tight text-center md:text-left">
+              Featured <span className="text-gradient">Innovations</span>
+            </h3>
+          </div>
+          <p className="text-gray-400 text-lg max-w-sm text-center md:text-right font-light">
+            A selection of my recent works in AI, Blockchain, and Full Stack development.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project) => (
             <div 
               key={project.id}
-              className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl transform hover:-translate-y-2"
+              className="glass rounded-3xl overflow-hidden group hover:border-white/20 transition-all duration-500"
             >
-              <div className="relative overflow-hidden h-48">
+              <div className="relative overflow-hidden h-64 sm:h-80">
                 <img 
                   src={project.image} 
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+                
+                <div className="absolute top-6 right-6 flex gap-2">
+                  {project.github && (
+                    <a 
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-3 rounded-full glass hover:bg-white/20 text-white transition-all transform hover:-translate-y-1"
+                    >
+                      <Github size={20} />
+                    </a>
+                  )}
+                  {project.link && (
+                    <a 
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-3 rounded-full glass hover:bg-white/20 text-white transition-all transform hover:-translate-y-1"
+                    >
+                      <ExternalLink size={20} />
+                    </a>
+                  )}
+                </div>
               </div>
               
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{project.title}</h3>
-                <p className="text-gray-600 dark:text-gray-400 mb-4 line-clamp-3">{project.description}</p>
-                
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.tags.slice(0, 3).map((tag, index) => (
+              <div className="p-8">
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.tags.slice(0, 4).map((tag, index) => (
                     <span 
                       key={index}
-                      className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300"
+                      className="text-[10px] uppercase font-bold tracking-widest px-2 py-1 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20"
                     >
-                      <Tag size={12} className="mr-1" />
                       {tag}
                     </span>
                   ))}
-                  {project.tags.length > 3 && (
-                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300">
-                      +{project.tags.length - 3}
-                    </span>
-                  )}
                 </div>
                 
-                <div className="flex justify-between items-center">
-                  <button
-                    onClick={() => setActiveProject(project)}
-                    className="text-blue-600 dark:text-blue-400 font-medium hover:text-blue-800 dark:hover:text-blue-300 transition-colors"
-                  >
-                    View Details
-                  </button>
-                  
-                  <div className="flex space-x-2">
-                    {project.github && (
-                      <a 
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="p-2 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
-                        aria-label="GitHub repository"
-                      >
-                        <Github size={16} />
-                      </a>
-                    )}
-                    
-                    {project.link && (
-                      <a 
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="p-2 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
-                        aria-label="Live project"
-                      >
-                        <ExternalLink size={16} />
-                      </a>
-                    )}
-                  </div>
-                </div>
+                <h4 className="text-2xl font-bold text-white mb-3 flex items-center justify-between">
+                  {project.title}
+                  <ArrowUpRight className="text-gray-600 group-hover:text-blue-400 transition-colors" size={24} />
+                </h4>
+                
+                <p className="text-gray-400 font-light leading-relaxed mb-6 line-clamp-2">
+                  {project.description}
+                </p>
+                
+                <button
+                  onClick={() => setActiveProject(project)}
+                  className="flex items-center gap-2 text-sm font-bold text-white hover:text-blue-400 transition-colors"
+                >
+                  <Code size={16} />
+                  Technical Details
+                </button>
               </div>
             </div>
           ))}
@@ -94,12 +95,12 @@ const Projects: React.FC = () => {
 
       {/* Project Detail Modal */}
       {activeProject && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50" onClick={() => setActiveProject(null)}>
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm" onClick={() => setActiveProject(null)}>
           <div 
-            className="bg-white dark:bg-gray-800 rounded-xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto"
+            className="glass rounded-3xl w-full max-w-4xl max-h-[90vh] overflow-y-auto border-white/10"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="relative h-64 sm:h-80">
+            <div className="relative h-64 sm:h-96">
               <img 
                 src={activeProject.image} 
                 alt={activeProject.title}
@@ -107,30 +108,35 @@ const Projects: React.FC = () => {
               />
               <button
                 onClick={() => setActiveProject(null)}
-                className="absolute top-4 right-4 p-2 rounded-full bg-gray-900 bg-opacity-50 hover:bg-opacity-70 text-white transition-colors"
-                aria-label="Close modal"
+                className="absolute top-4 right-4 p-3 rounded-full glass hover:bg-white/20 text-white transition-all"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
+                <ArrowUpRight className="rotate-45" size={24} />
               </button>
             </div>
             
-            <div className="p-6">
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{activeProject.title}</h3>
-              <p className="text-gray-600 dark:text-gray-400 mb-6">{activeProject.description}</p>
+            <div className="p-8 md:p-12">
+              <h3 className="text-3xl md:text-4xl font-bold text-white mb-6 uppercase tracking-tight">{activeProject.title}</h3>
               
-              <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Technologies Used</h4>
-              <div className="flex flex-wrap gap-2 mb-6">
-                {activeProject.tags.map((tag, index) => (
-                  <span 
-                    key={index}
-                    className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300"
-                  >
-                    <Tag size={14} className="mr-1" />
-                    {tag}
-                  </span>
-                ))}
+              <div className="grid md:grid-cols-3 gap-8 mb-10">
+                <div className="md:col-span-2">
+                  <h4 className="text-xs font-bold text-blue-400 uppercase tracking-widest mb-4">Overview</h4>
+                  <p className="text-gray-400 text-lg font-light leading-relaxed">
+                    {activeProject.description}
+                  </p>
+                </div>
+                <div>
+                  <h4 className="text-xs font-bold text-blue-400 uppercase tracking-widest mb-4">Stack</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {activeProject.tags.map((tag, index) => (
+                      <span 
+                        key={index}
+                        className="text-[10px] font-bold px-2 py-1 rounded bg-white/5 text-gray-400 border border-white/10"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </div>
               
               <div className="flex flex-wrap gap-4">
@@ -139,10 +145,9 @@ const Projects: React.FC = () => {
                     href={activeProject.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center px-4 py-2 rounded-lg bg-gray-900 text-white hover:bg-gray-800 transition-colors"
+                    className="inline-flex items-center px-8 py-4 rounded-2xl bg-white text-black font-bold hover:scale-105 transition-all"
                   >
-                    <Github size={18} className="mr-2" />
-                    View Code
+                    View Source
                   </a>
                 )}
                 
@@ -151,9 +156,8 @@ const Projects: React.FC = () => {
                     href={activeProject.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors"
+                    className="inline-flex items-center px-8 py-4 rounded-2xl glass hover:bg-white/10 text-white font-bold hover:scale-105 transition-all"
                   >
-                    <ExternalLink size={18} className="mr-2" />
                     Live Demo
                   </a>
                 )}
@@ -166,4 +170,4 @@ const Projects: React.FC = () => {
   );
 };
 
-export default Projects;
+export default Projects;
