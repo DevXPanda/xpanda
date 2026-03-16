@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { projects } from '../data';
 import { ExternalLink, Boxes, Github } from 'lucide-react';
 
 const Projects: React.FC = () => {
+  const [activeProjectId, setActiveProjectId] = useState<number | null>(null);
+  const activeProject = projects.find((p) => p.id === activeProjectId) || null;
+
   return (
     <section id="projects" className="py-24 bg-transparent transition-colors duration-300">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -49,29 +52,38 @@ const Projects: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="p-6 flex flex-col gap-4">
+                <div className="p-6 flex flex-col gap-4 h-full">
                   <div>
                     <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
                       {project.title}
                     </h4>
-                    <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+                    <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed min-h-[56px] md:min-h-[64px]">
                       {project.description}
                     </p>
                   </div>
 
                   <div className="flex items-center justify-between gap-3">
-                    <div className="flex flex-wrap gap-1 max-w-[60%]">
-                      {project.tags.slice(3, 6).map((tag) => (
+                    <div className="flex items-center gap-1 max-w-[60%] overflow-hidden whitespace-nowrap">
+                      {project.tags.slice(3, 5).map((tag) => (
                         <span
                           key={tag}
-                          className="px-2 py-0.5 rounded-full bg-gray-100 dark:bg-white/5 text-[9px] text-gray-600 dark:text-gray-300 uppercase tracking-widest"
+                          className="px-2 py-0.5 rounded-full bg-gray-100 dark:bg-white/5 text-[9px] text-gray-600 dark:text-gray-300 uppercase tracking-widest whitespace-nowrap"
                         >
                           {tag}
                         </span>
                       ))}
+                      {project.tags.length > 5 && (
+                        <button
+                          type="button"
+                          onClick={() => setActiveProjectId(project.id)}
+                          className="ml-1 text-[9px] font-semibold uppercase tracking-widest text-emerald-500 hover:text-emerald-400 underline underline-offset-4 whitespace-nowrap"
+                        >
+                          See full details
+                        </button>
+                      )}
                     </div>
 
-                    <div className="flex gap-2">
+                    <div className="flex gap-2 shrink-0">
                       {project.link && (
                         <a
                           href={project.link}
@@ -101,6 +113,72 @@ const Projects: React.FC = () => {
             ))}
           </div>
         </div>
+
+        {activeProject && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-black/60 backdrop-blur-sm">
+            <div className="max-w-2xl w-full rounded-3xl bg-white dark:bg-gray-950 border border-gray-200 dark:border-white/10 shadow-2xl overflow-hidden">
+              <div className="flex items-center justify-between px-6 py-4 border-b border-gray-200 dark:border-white/10">
+                <h4 className="text-lg font-semibold text-gray-900 dark:text-white">
+                  {activeProject.title}
+                </h4>
+                <button
+                  type="button"
+                  onClick={() => setActiveProjectId(null)}
+                  className="text-gray-400 hover:text-gray-600 dark:hover:text-white text-sm font-semibold"
+                >
+                  Close
+                </button>
+              </div>
+
+              <div className="p-6 space-y-4">
+                <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                  {activeProject.description}
+                </p>
+
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gray-400 mb-2">
+                    Tech stack used
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {activeProject.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-3 py-1 rounded-full bg-gray-100 dark:bg-white/10 text-[11px] text-gray-700 dark:text-gray-100 uppercase tracking-widest"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap justify-end gap-2 pt-2">
+                  {activeProject.link && (
+                    <a
+                      href={activeProject.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-emerald-500 text-white text-[11px] font-semibold hover:bg-emerald-600 transition-colors"
+                    >
+                      <ExternalLink size={13} />
+                      Live Demo
+                    </a>
+                  )}
+                  {activeProject.github && (
+                    <a
+                      href={activeProject.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-gray-900 text-white text-[11px] font-semibold hover:bg-black transition-colors"
+                    >
+                      <Github size={13} />
+                      View Code
+                    </a>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
