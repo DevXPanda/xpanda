@@ -1,4 +1,4 @@
-import { Project, Skill, SocialLink, Experience, Education, Certificate, Achievement } from '../types';
+import { Project, Skill, SocialLink, Experience, Education, Certificate, Achievement, TechnicalArsenalLink } from '../types';
 import {
   Boxes,
   Server,
@@ -79,6 +79,17 @@ export const projects: Project[] = [
     github: 'https://github.com/DevXPanda/DecFileStorage.git',
     link: 'https://dvault.netlify.app/'
   }
+];
+
+// -------------------- TECHNICAL ARSENAL (PROJECT LINKS) --------------------
+// Add your project links here – shown in the Technical Arsenal section before Skills.
+
+export const technicalArsenalLinks: TechnicalArsenalLink[] = [
+  { id: 1, name: 'AJ Clinic - Doctor Appointment', link: 'https://ajclinic.netlify.app/' },
+  { id: 2, name: 'ULB System - Government Portal', link: 'https://ulbsystemm.vercel.app/' },
+  { id: 3, name: 'Lookfame - E-Commerce', link: 'https://lookfame.com' },
+  { id: 4, name: 'Personal AI Assistant', link: 'https://github.com/DevXPanda/Personal-AI-Assistant' },
+  { id: 5, name: 'Decentralized File Storage', link: 'https://dvault.netlify.app/' }
 ];
 
 

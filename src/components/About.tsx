@@ -1,5 +1,6 @@
 import React from 'react';
 import { BookOpen, Award, Terminal, Code2, Sparkles } from 'lucide-react';
+import heroImage from '../assets/Hero.png';
 
 const About: React.FC = () => {
   return (
@@ -21,14 +22,14 @@ const About: React.FC = () => {
             <div className="relative group">
               <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-2xl blur opacity-10 dark:opacity-25 group-hover:opacity-30 dark:group-hover:opacity-50 transition duration-1000 pointer-events-none"></div>
               <div className="relative glass-card overflow-hidden !p-0 border-black/5 dark:border-white/10 shadow-2xl">
-                <img 
-                  src="https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                <img
+                  src={heroImage}
                   alt="Coding workspace"
-                  className="w-full h-auto object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100"
+                  className="w-full h-auto object-cover transition-all duration-700 scale-105 group-hover:scale-100"
                 />
               </div>
-              
-              <div className="absolute -bottom-6 -right-6 glass p-6 rounded-2xl hidden md:block animate-bounce shadow-2xl border-black/5 dark:border-white/10 bg-white/90 dark:bg-black/80">
+
+              {/* <div className="absolute -bottom-6 -right-6 glass p-6 rounded-2xl hidden md:block animate-bounce shadow-2xl border-black/5 dark:border-white/10 bg-white/90 dark:bg-black/80">
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 bg-blue-500/10 dark:bg-blue-500/20 rounded-xl flex items-center justify-center text-blue-600 dark:text-blue-400">
                     <Terminal size={24} />
@@ -38,18 +39,18 @@ const About: React.FC = () => {
                     <p className="text-lg font-bold text-gray-900 dark:text-white leading-tight">Full Stack AI</p>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
 
           <div className="lg:w-1/2">
             <div className="space-y-6 text-gray-600 dark:text-gray-400 text-xl font-medium leading-relaxed mb-10">
               <p>
-                I’m <span className="text-gray-950 dark:text-white font-black">Satyam Pandey</span>, a Full Stack & AI Engineer with hands-on experience building scalable web applications and AI-powered systems. 
+                I’m <span className="text-gray-950 dark:text-white font-black">Satyam Pandey</span>, a Full Stack & AI Engineer with hands-on experience building scalable web applications and AI-powered systems.
                 I specialize in developing production-ready applications, REST APIs, and intelligent automation workflows.
               </p>
               <p>
-                I have a strong foundation in <span className="text-gray-950 dark:text-white font-black">Machine Learning, Deep Learning, and NLP</span>. 
+                I have a strong foundation in <span className="text-gray-950 dark:text-white font-black">Machine Learning, Deep Learning, and NLP</span>.
                 My expertise lies in integrating LLMs, vector databases, and RAG pipelines into modern web architectures.
               </p>
             </div>
@@ -74,7 +75,7 @@ const About: React.FC = () => {
                   <p className="text-sm text-gray-500 dark:text-gray-400 font-medium">15+ AI & Web Projects</p>
                 </div>
               </div>
-              
+
               <div className="glass-card flex items-start gap-4 border-black/5 dark:border-white/5 p-6 hover:bg-white/50 dark:hover:bg-white/5 transition-colors">
                 <div className="w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center text-purple-600 dark:text-purple-400 shrink-0">
                   <Code2 size={22} />

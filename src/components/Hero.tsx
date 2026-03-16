@@ -62,13 +62,13 @@ const Hero: React.FC = () => {
           </div>
 
           <div className="lg:w-2/5 flex justify-center lg:sticky lg:top-24">
-            <div className="relative w-72 h-72 sm:w-96 sm:h-96">
+            <div className="relative w-80 h-80 sm:w-[22rem] sm:h-[22rem] md:w-[24rem] md:h-[24rem]">
               <div className="absolute inset-0 bg-gradient-to-tr from-blue-600 to-cyan-400 rounded-[3rem] rotate-6 opacity-10 dark:opacity-20 blur-2xl pointer-events-none"></div>
               <div className="relative w-full h-full rounded-[3rem] overflow-hidden border-2 border-black/5 dark:border-white/10 glass rotate-3 hover:rotate-0 transition-transform duration-500 shadow-2xl">
                 <img
                   src={profileImage}
                   alt="Satyam Pandey"
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                  className="w-full h-full object-cover brightness-110 contrast-105 saturate-[1.05] transition-all duration-500"
                 />
               </div>
             </div>

@@ -53,3 +53,9 @@ export interface Achievement {
   id: number;
   description: string;
 }
+
+export interface TechnicalArsenalLink {
+  id: number;
+  name: string;
+  link: string;
+}
