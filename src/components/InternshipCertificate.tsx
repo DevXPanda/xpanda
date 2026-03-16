@@ -1,84 +1,74 @@
-import React from "react";
-import { Award, ExternalLink } from "lucide-react";
+import React from 'react';
+import { Award, ExternalLink } from 'lucide-react';
 
 const InternshipCertificate: React.FC = () => {
-  
-  // 👉 Add your Google Drive direct link here:
-  const certificateURL = "https://drive.google.com/file/d/1BYQWWKGx_8IgFZ_51Io1qbhiyu1xftzx/view?usp=sharing";
-
-  // 👉 Link to open certificate (normal drive link)
   const certificateLink = "https://drive.google.com/file/d/1BYQWWKGx_8IgFZ_51Io1qbhiyu1xftzx/view?usp=sharing";
 
   return (
-    <section
-      id="certificate"
-      className="py-20 bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-950"
-    >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Heading */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-            Internship Certificate
-          </h2>
-          <div className="w-24 h-1 rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 mx-auto mb-6"></div>
-          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">
-            Verified certificate of my internship as a Software Development Engineer (SDE) at Bluestock Fintech.
+    <section id="certificate" className="py-24 relative overflow-hidden bg-gray-50 dark:bg-gray-950 transition-colors duration-300">
+      {/* Background decoration */}
+      <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_0%,rgba(59,130,246,0.02)_0%,transparent_50%)] pointer-events-none"></div>
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center mb-20">
+          <h2 className="text-base font-bold text-blue-600 dark:text-blue-400 uppercase tracking-[0.3em] mb-4">Recognition</h2>
+          <h3 className="text-4xl md:text-5xl font-extrabold tracking-tighter text-gray-900 dark:text-white leading-tight">
+            Internship <span className="text-gradient">Certificate</span>
+          </h3>
+          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg mt-6 font-light">
+            Verified certificate of my contribution as a <span className="text-gray-900 dark:text-white font-medium">Software Development Engineer (SDE)</span> at Bluestock Fintech.
           </p>
         </div>
 
-        {/* Certificate Card */}
         <div className="max-w-4xl mx-auto">
-          <div className="relative bg-white/20 dark:bg-gray-800/40 backdrop-blur-xl 
-          border border-gray-200/20 dark:border-gray-700/40 rounded-2xl p-6 shadow-lg">
-            
-            {/* Glow */}
-            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-600/20 to-cyan-500/20 
-            opacity-0 hover:opacity-100 blur-xl transition-all duration-300"></div>
+          <div className="glass-card relative overflow-hidden p-10 border-black/5 dark:border-white/10 shadow-2xl group transition-all duration-500 hover:border-blue-500/30">
+            {/* Hover Glow */}
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
             <div className="relative z-10">
-              
-              {/* Title */}
-              <div className="flex items-center gap-3 mb-4">
-                <Award className="text-blue-600 dark:text-blue-400" size={32} />
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
-                  SDE Internship – Bluestock Fintech
-                </h3>
+              <div className="flex flex-col md:flex-row items-center gap-8">
+                <div className="shrink-0">
+                  <div className="w-20 h-20 rounded-3xl bg-blue-500/10 dark:bg-blue-500/20 flex items-center justify-center text-blue-600 dark:text-blue-400 border border-blue-500/20 shadow-xl group-hover:scale-110 transition-transform">
+                    <Award size={40} />
+                  </div>
+                </div>
+                
+                <div className="flex-1 text-center md:text-left">
+                  <h3 className="text-2xl font-extrabold text-gray-900 dark:text-white mb-2 uppercase tracking-tight leading-tight">
+                    SDE Internship – Bluestock Fintech
+                  </h3>
+                  <div className="flex flex-wrap items-center justify-center md:justify-start gap-3 mb-6">
+                    <span className="text-[10px] font-black py-1 px-3 bg-blue-500/10 text-blue-600 dark:text-blue-400 rounded-full uppercase tracking-widest border border-blue-500/20">
+                      June 2025 – July 2025
+                    </span>
+                    <span className="text-gray-400 text-[10px] font-black tracking-widest uppercase">Verified Recognition</span>
+                  </div>
+                  <p className="text-gray-600 dark:text-gray-400 text-lg font-light leading-relaxed mb-8">
+                    During this tenure, I focused on building scalable financial software solutions, 
+                    optimizing backend architectures, and collaborating with a cross-functional engineering team.
+                  </p>
+                  
+                  <div className="flex flex-wrap items-center justify-center md:justify-start gap-4">
+                    <a
+                      href={certificateLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center px-8 py-4 rounded-2xl bg-gray-900 dark:bg-white text-white dark:text-black font-bold hover:scale-105 transition-all shadow-xl group/btn"
+                    >
+                      <ExternalLink size={20} className="mr-3 transition-transform group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1" />
+                      View Certificate
+                    </a>
+                  </div>
+                </div>
               </div>
+            </div>
 
-              {/* Duration */}
-              <p className="text-gray-700 dark:text-gray-300 mb-4">
-                Completed internship as a <strong>Software Development Engineer (SDE)</strong> 
-                from <b>1 June 2025</b> to <b>30 July 2025</b>.
-              </p>
-
-              {/* Certificate Image From Google Drive */}
-              {/* <div className="rounded-xl overflow-hidden shadow-lg border border-gray-300/30 dark:border-gray-600/40">
-                <img 
-                  src={certificateURL}
-                  alt="Bluestock Internship Certificate" 
-                  className="w-full object-cover"
-                />
-              </div> */}
-
-              {/* Button */}
-              <div className="text-center mt-6">
-                <a
-                  href={certificateLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center px-6 py-3 rounded-xl bg-blue-600 text-white 
-                  hover:bg-blue-700 transition-all shadow-md hover:shadow-blue-500/30"
-                >
-                  <ExternalLink size={20} className="mr-2" />
-                  View Certificate
-                </a>
-              </div>
-
+            {/* Background Icon Decoration */}
+            <div className="absolute -bottom-10 -right-10 pointer-events-none opacity-[0.03] dark:opacity-[0.05] group-hover:opacity-[0.08] transition-opacity">
+              <Award size={300} />
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );

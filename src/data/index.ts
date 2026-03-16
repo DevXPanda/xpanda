@@ -1,17 +1,19 @@
 import { Project, Skill, SocialLink, Experience, Education, Certificate, Achievement } from '../types';
-import { 
-  Boxes, 
-  Server, 
-  Zap, 
+import {
+  Boxes,
+  Server,
+  Zap,
   Paintbrush,
-  Database, 
-  Code, 
+  Database,
+  Code,
   Network,
   BrainCircuit,
   Sigma,
   Atom,
   Github,
   Linkedin,
+  Instagram,
+  Mail,
   Cpu,
   Bot,
   Layers,
@@ -20,13 +22,45 @@ import {
 
 // Images
 import decentralizedStorageImg from '../assets/Decentralized-Storage.png';
-// import doctorAppointmentImg from '../assets/doctor-appointment-booking-app-development.webp';
+import lookfameImg from '../assets/lookfame-preview.png';
+import ulbSystemImg from '../assets/ulb-system-preview.png';
+import doctorAppImg from '../assets/doctor-appointment-preview.png';
 
 // -------------------- PROJECTS --------------------
 
 export const projects: Project[] = [
   {
     id: 1,
+    title: 'AJ Clinic - AI-Powered Doctor Appointment System',
+    description:
+      'A sophisticated medical booking platform featuring a dedicated doctor appointment UI and an integrated AI chatbot for patient assistance.',
+    image: doctorAppImg,
+    tags: ['React', 'Node.js', 'AI Chatbot', 'Full Stack', 'Vite', 'TailwindCSS'],
+    github: 'https://github.com/DevXPanda/Doctor-Appoitment',
+    link: 'https://ajclinic.netlify.app/'
+  },
+  {
+    id: 2,
+    title: 'ULB System - Government Management Portal',
+    description:
+      'A comprehensive management system for Urban Local Bodies (ULB), streamlining administrative workflows, data tracking, and governance operations.',
+    image: ulbSystemImg,
+    tags: ['React', 'Node.js', 'PostgreSQL', 'Express', 'TailwindCSS', 'Management'],
+    github: 'https://github.com/DevXPanda/HTCMS',
+    link: 'https://ulbsystemm.vercel.app/'
+  },
+  {
+    id: 3,
+    title: 'Lookfame - Premium E-Commerce Platform',
+    description:
+      'A full-stack, scalable e-commerce solution featuring real-time inventory management, secure payments, and a premium shopping experience.',
+    image: lookfameImg,
+    tags: ['React', 'Node.js', 'Express', 'MongoDB', 'Redux', 'Stripe', 'TailwindCSS'],
+    github: 'https://github.com/DevXPanda/LookFME.git',
+    link: 'https://lookfame.com'
+  },
+  {
+    id: 4,
     title: 'Personal AI Assistant (Multi-Agent System)',
     description:
       'Built an AI Assistant capable of handling tasks such as text generation, reminders, email drafts, coding help, and web search. Used LLM orchestration, memory modules, and tool-based agent execution.',
@@ -36,7 +70,7 @@ export const projects: Project[] = [
     // link: 'https://dvault.netlify.app/'
   },
   {
-    id: 2,
+    id: 5,
     title: 'Decentralized File Storage System',
     description:
       'Developed a secure file storage platform with end-to-end encryption using blockchain and IPFS technologies.',
@@ -90,7 +124,7 @@ export const experiences: Experience[] = [
     id: 1,
     role: 'AI Web Developer Intern',
     company: 'Bizwoke Nova',
-    location: 'Remote / Hybrid',
+    location: 'Onsite, Noida, Uttar Pradesh, India',
     period: 'Dec 2024 – Present',
     description: [
       'Worked on AI-powered web applications using React.js and Node.js.',
@@ -107,25 +141,25 @@ export const education: Education[] = [
     id: 1,
     institution: 'United University, Prayagraj',
     degree: 'B.tech CSE',
-    location: 'Prayagraj, India',
+    location: 'Prayagraj, Uttar Pradesh, India',
     period: 'Aug 2022 - May 2026',
     grade: '7.9 CGPA',
     description: 'Specializing in Artificial Intelligence and Full Stack Development.'
   },
   {
     id: 2,
-    institution: 'B.B.S Inter College',
+    institution: 'Kendriya Vidyalaya',
     degree: 'Senior Secondary (PCM)',
-    location: 'Prayagraj, India',
+    location: 'Ballia, Uttar Pradesh, India',
     period: 'April 2020 - March 2021',
     grade: '81%',
     description: 'Focus on PCM and foundational computer science.'
   },
   {
     id: 3,
-    institution: 'St. John’s Co-Ed School',
+    institution: 'Kendriya Vidyalaya',
     degree: 'High School',
-    location: 'Prayagraj, India',
+    location: 'Ballia, Uttar Pradesh, India',
     period: 'April 2018 - March 2019',
     grade: '80.6%',
     description: 'Distinction in Mathematics and Science.'
@@ -173,7 +207,8 @@ export const achievements: Achievement[] = [
 export const socialLinks: SocialLink[] = [
   { id: 1, name: 'GitHub', icon: Github, url: 'https://github.com/DevXPanda' },
   { id: 2, name: 'LinkedIn', icon: Linkedin, url: 'https://www.linkedin.com/in/satyam-pandey-b5818824b' },
-  { id: 3, name: 'Email', icon: Bot, url: 'mailto:Satyamkumarpandey4567@gmail.com' }
+  { id: 3, name: 'Instagram', icon: Instagram, url: 'https://www.instagram.com/satyammm.19/' },
+  { id: 4, name: 'Email', icon: Mail, url: 'mailto:Satyamkumarpandey4567@gmail.com' }
 ];
 
 // Footer content

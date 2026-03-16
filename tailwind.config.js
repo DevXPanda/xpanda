@@ -6,6 +6,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        heading: ['"Space Grotesk"', 'sans-serif'],
       },
       colors: {
         blue: {
@@ -37,8 +38,13 @@ export default {
       },
       animation: {
         'bounce': 'bounce 1s infinite',
+        'scan': 'scan 3s linear infinite',
       },
       keyframes: {
+        scan: {
+          '0%': { transform: 'translateY(-100%)' },
+          '100%': { transform: 'translateY(100%)' },
+        },
         bounce: {
           '0%, 100%': {
             transform: 'translateY(-25%)',
